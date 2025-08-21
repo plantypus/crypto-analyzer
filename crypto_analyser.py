@@ -53,7 +53,7 @@ Changelog
   - Format de date de l’axe X : `jj-mm-aaaa`, ou **HH:MM** si la fenêtre < 24h (titre ajoute "aujourd'hui").
   - Libellés clairs **Oui/Non** pour les signaux.
 - **v1.1** : `fetch_market_chart` peut basculer sur `/market_chart/range` si `days > 365` (utile mais non requis pour v1.2).
-- **v1.0** : première version fonctionnelle (CLI + Streamlit, indicateurs, signaux, backtest simple).** : première version fonctionnelle (CLI + Streamlit, indicateurs, signaux, backtest simple).
+- **v1.0** : première version fonctionnelle (CLI + Streamlit, indicateurs, signaux, backtest simple).
 """
 from __future__ import annotations
 
