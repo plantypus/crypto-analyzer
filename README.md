@@ -37,14 +37,14 @@ Permet de :
 ## 📦 Installation
 
 Prérequis Python 3.9+ :
-requests
-pandas
-matplotlib
-python-dateutil
-streamlit
-plotly
+- requests
+- pandas
+- matplotlib
+- python-dateutil
+- streamlit
+- plotly
 
 ```bash
 pip install -r requirements.txt
-
+```
 
