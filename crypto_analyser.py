@@ -467,15 +467,29 @@ def plot_equity_curve(eq: pd.Series, title: str = "Courbe d'équité", show: boo
 
 def generate_signals(df: pd.DataFrame, rsi_buy: float = 30, rsi_sell: float = 70,
                      sma_short: int = 50, sma_long: int = 200, bb_mult: float = 2.0) -> pd.DataFrame:
-    """Génère colonnes booléennes 'sig_buy' et 'sig_sell' selon règles simples.
+    """Génère colonnes booléennes ``sig_buy`` et ``sig_sell`` selon règles simples.
 
     Règles (pédagogiques) :
-      - Achat si SMA_short > SMA_long ET RSI < rsi_buy ET prix < (SMA20 - bb_mult*std20)
-      - Vente si RSI > rsi_sell OU prix > (SMA20 + bb_mult*std20)
+      - Achat si ``SMA_short`` > ``SMA_long`` ET ``RSI`` < ``rsi_buy`` ET ``prix`` < (``SMA20`` - ``bb_mult``*``std20``)
+      - Vente si ``RSI`` > ``rsi_sell`` OU ``prix`` > (``SMA20`` + ``bb_mult``*``std20``)
 
-    Returns: nouveau DataFrame avec colonnes sig_buy/sig_sell (bool).
+    Les SMA ``sma_short`` et ``sma_long`` personnalisées sont calculées si absentes.
+
+    Returns:
+        Nouveau DataFrame avec colonnes ``sig_buy``/``sig_sell`` (bool).
     """
+    if not all(isinstance(x, int) and x > 0 for x in (sma_short, sma_long)):
+        raise ValueError("'sma_short' et 'sma_long' doivent être des entiers positifs")
+    if sma_short >= sma_long:
+        raise ValueError("'sma_short' doit être strictement inférieur à 'sma_long'")
+
     d = compute_indicators(df)
+
+    for period in (sma_short, sma_long):
+        col = f"SMA{period}"
+        if col not in d.columns:
+            d[col] = rolling_mean(d['prix'], period)
+
     std20 = d['prix'].rolling(20).std()
     bb_low = d['SMA20'] - bb_mult * std20
     bb_high = d['SMA20'] + bb_mult * std20
