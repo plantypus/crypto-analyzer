@@ -1,25 +1,15 @@
-import importlib
-import sys
-import types
-
 import pandas as pd
 import pytest
 
-import indicators
-
-# Create a dummy 'core.indicators' module so that backtest can import it
-core_module = types.ModuleType("core")
-core_module.indicators = indicators
-sys.modules["core"] = core_module
-sys.modules["core.indicators"] = indicators
-
-import backtest
+from crypto_analyzer.core import backtest
 
 
 def test_backtest_long_only(monkeypatch):
     df = pd.DataFrame({"close": [10, 11, 12]})
 
     def fake_sma(series, window):
+        if window == 20:
+            return pd.Series([3, 3, 3], index=series.index)
         return pd.Series([2, 2, 2], index=series.index)
 
     def fake_rsi(series):
