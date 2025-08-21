@@ -7,7 +7,6 @@ Responsable de la récupération des prix de cryptomonnaies depuis l’API CoinG
 import os
 import requests
 import pandas as pd
-from datetime import datetime
 
 COINGECKO_API = "https://api.coingecko.com/api/v3"
 

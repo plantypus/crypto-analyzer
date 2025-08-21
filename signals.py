@@ -4,8 +4,6 @@ Module signals.py
 Définit les règles simples pour générer des signaux d'achat/vente.
 """
 
-import pandas as pd
-
 def buy_signal(price: float, sma200: float, rsi_val: float, bb_low: float) -> bool:
     """
     Retourne True si les conditions d’achat sont réunies.
