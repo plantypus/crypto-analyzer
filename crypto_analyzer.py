@@ -35,8 +35,11 @@ __version__ = "2.0.2"
 def _ensure_project_on_path() -> None:
     """Ajoute automatiquement le dossier du script au PYTHONPATH (imports fiables)."""
     root = os.path.abspath(os.path.dirname(__file__))
+    src = os.path.join(root, "src")
     if root not in sys.path:
         sys.path.insert(0, root)
+    if src not in sys.path:
+        sys.path.insert(0, src)
 
 
 def run_cli_forward(argv: list[str] | None) -> int:

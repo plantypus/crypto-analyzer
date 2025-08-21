@@ -5,7 +5,7 @@ Backtest simple d’une stratégie long-only basée sur RSI et SMA.
 """
 
 import pandas as pd
-from core.indicators import sma, rsi
+from .indicators import sma, rsi
 
 def backtest_long_only(df: pd.DataFrame, rsi_buy=30, rsi_sell=70, sma_short=20, sma_long=200) -> dict:
     """

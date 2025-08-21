@@ -5,10 +5,10 @@ Analyse rapide en CLI.
 """
 
 import argparse
-from core.data import fetch_market_chart
-from core.indicators import sma, bollinger_bands, rsi
-from core.signals import buy_signal, sell_signal
-from core.levels import propose_levels
+from crypto_analyzer.core.data import fetch_market_chart
+from crypto_analyzer.core.indicators import sma, bollinger_bands, rsi
+from crypto_analyzer.core.signals import buy_signal, sell_signal
+from crypto_analyzer.core.levels import propose_levels
 
 def main():
     parser = argparse.ArgumentParser(description="Analyse crypto en CLI")

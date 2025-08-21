@@ -25,11 +25,11 @@ import streamlit as st
 import plotly.graph_objects as go
 
 # Moteur (core)
-from core.data import fetch_market_chart
-from core.indicators import sma, bollinger_bands, rsi
-from core.signals import buy_signal, sell_signal
-from core.levels import propose_levels
-from core.backtest import backtest_long_only
+from crypto_analyzer.core.data import fetch_market_chart
+from crypto_analyzer.core.indicators import sma, bollinger_bands, rsi
+from crypto_analyzer.core.signals import buy_signal, sell_signal
+from crypto_analyzer.core.levels import propose_levels
+from crypto_analyzer.core.backtest import backtest_long_only
 
 
 # -------------------------------------------------------------------

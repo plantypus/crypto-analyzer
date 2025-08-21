@@ -1,6 +1,6 @@
 import pytest
 
-from signals import buy_signal, sell_signal
+from crypto_analyzer.core.signals import buy_signal, sell_signal
 
 
 @pytest.mark.parametrize(

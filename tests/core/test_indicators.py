@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-import indicators
+from crypto_analyzer.core import indicators
 
 
 def test_sma_basic():
