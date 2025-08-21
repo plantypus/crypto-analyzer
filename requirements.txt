@@ -1,2 +1,8 @@
+requests
+pandas
+streamlit
+plotly
+fastapi
+uvicorn
 pandas
 pytest
