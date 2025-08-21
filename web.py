@@ -11,7 +11,7 @@ UI interactive s'appuyant sur le moteur 'core':
 - Backtest (core.backtest)
 
 Lancer :
-    python crypto_analyser.py web
+    python crypto_analyzer.py web
 ou :
     streamlit run interfaces/web.py
 """
