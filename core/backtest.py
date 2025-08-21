@@ -21,7 +21,7 @@ def backtest_long_only(df: pd.DataFrame, rsi_buy=30, rsi_sell=70, sma_short=20, 
     for i in range(len(df)):
         row = df.iloc[i]
         if position == 0:
-            if row["rsi"] < rsi_buy and row["sma_short"] > row["sma_long"]:
+            if row["rsi"] < rsi_buy and row["sma_short"] >= row["sma_long"]:
                 position = equity / row["close"]  # acheter
                 equity = 0
         else:

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-crypto_analyser.py — Analyse crypto : CLI + Interface Streamlit (en un seul fichier)
-===================================================================================
+crypto_analyzer_legacy.py — Analyse crypto : CLI + Interface Streamlit (en un seul fichier)
+===========================================================================================
 
 Version : **1.2.2** (ajout onglet 📘 Aide & Glossaire)
 
@@ -33,10 +33,10 @@ Prérequis :
 
 Utilisation :
     # Mode console (CLI)
-    python crypto_analyser.py --coin btc --days 180 --vs EUR --buy 52000 --target 65000 --stop 48000
+    python crypto_analyzer_legacy.py --coin btc --days 180 --vs EUR --buy 52000 --target 65000 --stop 48000
 
     # Mode interface web (formulaire + bulles d'aide)
-    streamlit run crypto_analyser.py
+    streamlit run crypto_analyzer_legacy.py
 
 Remarques :
 - CoinGecko n'exige pas de clé API pour les endpoints utilisés ici.
@@ -972,4 +972,4 @@ if __name__ == "__main__":
             print("Streamlit n'est pas installé.")
             print("Installez-le avec: pip install streamlit")
             print("Ou lancez en mode console, ex.:")
-            print("python crypto_analyser.py --coin btc --days 90 --vs EUR")
+            print("python crypto_analyzer_legacy.py --coin btc --days 90 --vs EUR")
