@@ -50,3 +50,8 @@ python crypto_analyzer.py api --port 8000
 - `console.py` : interface en ligne de commande.
 - `web.py` : interface utilisateur Streamlit.
 - `crypto_analyzer.py` : point d'entrée pour lancer CLI, interface web ou API.
+## Stratégie Git
+
+- `main` : branche stable contenant les versions prêtes pour la production.
+- `develop` : branche d'intégration où les fonctionnalités sont assemblées avant d'être fusionnées dans `main`.
+- `feature/*` : branches dérivées de `develop` pour développer de nouvelles fonctionnalités ou corrections.
