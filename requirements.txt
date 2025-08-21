@@ -4,3 +4,5 @@ streamlit
 plotly
 fastapi
 uvicorn
+pandas
+pytest
